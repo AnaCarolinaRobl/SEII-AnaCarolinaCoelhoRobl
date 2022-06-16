@@ -1,0 +1,6 @@
+1) TCP --> 1.460 bytes (1500 - 20 bytes cabeçalho IP - 20 bytes cabeçalho TCP).
+UDP --> 65.507 bytes (65.535 - 20 bytes do cabeçalho IP - 8 bytes do cabeçalho UDP).
+2) Utilizando o File Transfer Protocol (FTP).
+3) O protocolo TCP possui uma comunicação confiavel, uma vez que, faz a conexão com o cliente para a trasnferencia
+de arquivos de forma mais segura. Já o protocolo UDP, é mais voltado para o transporte em tempo real e não se conecta com
+o cliente, por isso oferece pouca confiabilidade e possui uma comunicação mais rápida.

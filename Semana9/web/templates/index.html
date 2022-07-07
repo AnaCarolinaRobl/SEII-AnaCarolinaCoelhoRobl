@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head%}
+
+<title>Agenda</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="content">
+    <h1 id="title">Agenda</h1>
+    {% if tasks|length < 1 %}
+    <h4 style="text-align: center;">Não Existem Tarefas. Crie Uma!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Tarefa</th>
+            <th>Adicionado</th>
+            <th>Ações</th>
+        </tr>
+        {% for task in tasks %}
+            <tr id="tablerow">
+                <td>{{ task.content }}</td>
+                <td>{{ task.current_date}}</td>
+                <td>
+                    <a id="options" style="color:red" href="/delete/{{task.id}}">Deletar</a>
+                    <br>
+                    <a id="options" style="color:yellow" href="/update/{{task.id}}">Atualizar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <form style="padding: 10px" action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Adicionar" id="button">
+    </form> 
+
+</div>
+
+{% endblock %}
